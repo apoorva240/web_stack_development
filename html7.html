@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <title>salient features of HTML5.</title>
+    <script>
+      function myfunc()  
+      {var canvas=document.getElementById('mycanvas');
+      var ctx = canvas.getContext("2d");
+      ctx.font = "30px Arial";
+      ctx.fillText("Payroll Management - Canvas ", 10, 50);
+      }
+      
+      function getposition()
+      { var x=document.getElementById('locate');
+        if(navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition)
+        }
+        else
+        x.innerHTML="Geolocation not supported by your browser"
+      }
+      function showPosition(position)
+      { var x=document.getElementById('locate');
+        
+        x.innerHTML="Latitude "+position.coords.latitude+"<br>Longitude "+position.coords.longitude;
+      }
+    </script>
+</head>
+<body bgcolor="skyblue">
+    <label>This is a canvas</label>
+     <canvas id="mycanvas" onmouseover="myfunc()" height="70px" width="500px" style="border:10px blue double">
+    </canvas>
+    <br/>
+    <label>This is audio</label>
+    <audio controls autoplay muted>
+        <source src="video.mp4" type="audio/ogg">
+        <source src="video.mp4" type="audio/wav">
+        <source src="video.mp4" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br/>
+    <label>This is video</label>
+    <video controls autoplay muted width="40%" height="40%">
+        <source src="video.ogg" type="video/ogg">
+        <source src="video.mp4" type="video/mp4">
+        Your browser doesnt support the video element.
+    </video>
+    <br/>
+    <br/>
+    Date of join : <input type="date" name="Leave_date">
+    <br/></br>
+    Month of salary reimbursement: <input type="month" name="salary month">
+    <br/></br>
+    Number of leaves taken by employee : <input type="number" min="0" max="10">
+    <br/></br>
+    <label>Choose Department</label>
+    <input type="text" list="mydatalist">
+    <datalist id="mydatalist">
+        <option value="IT"/>
+         <option value="HR"/>
+         <option value="Design"/>
+         <option value="RnD"/>
+    </datalist>
+    <br/></br>
+    salary deductions can be in the range of:
+    <input type="range" min="0" max="5000"/>
+    <br/></br>
+    Search for your department : <input type="search" placeholder="this is a search box" size="50">
+    <br/></br>
+    Click here for geolocation : <button onclick="getposition()">Click here to get position</button>
+    <p id="locate"></p>
+</body>
+</html>
