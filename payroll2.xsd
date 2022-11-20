@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="payroll_management">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="payroll" maxOccurs="unbounded" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="empname" type="xs:string"/>
+<xs:element name="salary" >
+<xs:simpleType>
+<xs:restriction base="xs:float">
+<xs:minInclusive value="2000.50" />
+<xs:maxInclusive value="1500000.90" />
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="email" type="xs:string"/>
+<xs:element name="phno" >
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:pattern value="[0-9]{10}" />
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="dept">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Architecture" />
+<xs:enumeration value="Information Technology" />
+<xs:enumeration value="Human Resource" />
+<xs:enumeration value="Management" />
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="doj" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:sequence>
+
+</xs:complexType>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,8 @@
+<!ELEMENT payroll_management(payroll+)>
+<!ELEMENT payroll (empname,salary,email,phno,dept,doj)>
+<!ELEMENT empname (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phno (#PCDATA)>
+<!ELEMENT dept (#PCDATA)>
+<!ELEMENT doj (#PCDATA)>
