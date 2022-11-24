@@ -3,18 +3,18 @@
 <payroll_management>
 <payroll>
 <empname>Bidura Sarkar </empname>
-<salary>0.0</salary>
-<dept>Information Technology</dept>
-<contact>1234567890</contact>
+<salary>200500.0</salary>
 <email>abc@gmail.com</email>
+ <contact>1234567890</contact>
+<dept>Information Technology</dept>
 <doj>2024/07/31</doj>
 </payroll>
 <payroll>
 <empname>Jitendra Sarkar</empname>
 <salary>1200000</salary>
-<dept>Artificial Intelligence</dept>
-<contact>1234567899</contact>
 <email>abc2@gmail.com</email>
+<contact>1234567899</contact>
+<dept>Artificial Intelligence</dept>
 <doj>2024/07/30</doj>
 </payroll>
 </payroll_management>
