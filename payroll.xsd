@@ -28,7 +28,7 @@
 <xs:restriction base="xs:string">
 <xs:enumeration value="Architecture" />
 <xs:enumeration value="Information Technology" />
-<xs:enumeration value="Human Resource" />
+<xs:enumeration value="Artificial Intelligence" />
 <xs:enumeration value="Management" />
 </xs:restriction>
 </xs:simpleType>
