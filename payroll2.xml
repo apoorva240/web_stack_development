@@ -3,7 +3,7 @@
 <!DOCTYPE payroll_management SYSTEM "payroll2.dtd">
 <payroll_management xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="C://xampp2//htdocs//payroll2.xsd">
 <payroll>
-<empname language="Bengali">Bidura Sarkar</empname>
+<empname>Bidura Sarkar</empname>
 <salary>20000</salary>
 <email>abc@gmail.com</email>
 <phno>1234567890</phno>
@@ -11,7 +11,7 @@
 <doj>13.12.2025</doj>
 </payroll>
 <payroll>
-<empname language="Tamil" >Richie astar</empname>
+<empname>Richie astar</empname>
 <salary>15000</salary>
 <email>abc2@gmail.com</email>
 <phno>1234567899</phno>
@@ -19,7 +19,7 @@
 <doj>14.12.2021</doj>
 </payroll>
 <payroll>
-<empname language="Bengali">Aniruddha Bandopadhyay</empname>
+<empname>Aniruddha Bandopadhyay</empname>
 <salary>20000.56</salary>
 <email>abc4@gmail.com</email>
 <phno>1234565890</phno>
