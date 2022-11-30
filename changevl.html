@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<body>
+    <p id="demo"></p>
+    <p id="demo3"></p>
+    <p id="demo2"></p>
+    <p id="demo4"></p>
+    <script>
+       
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {myFunction(this);}
+               
+            
+        }
+        xhttp.open("GET","payroll2.xml",true);
+        xhttp.send();
+        function myFunction(xml)
+        {
+            var xmldoc=xml.responseXML;
+            var x= xmldoc.getElementsByTagName("empname")[0].childNodes[0];
+            document.getElementById("demo").innerHTML=x.nodeValue;
+           
+            xmldoc.getElementsByTagName("email")[0].childNodes[0];
+            x.nodeValue="koli.pearl@gmail.com";
+            document.getElementById("demo3").innerHTML = "Changed value = " + x.nodeValue;
+            var root= xmldoc.documentElement;
+            var currnode=root.childNodes[1];
+            removenode=currnode.removeChild(currnode.childNodes[1]);
+            document.getElementById("demo2").innerHTML=" Removed node = " + removenode.nodeName;
+
+            y=xmldoc.documentElement.childNodes;
+            var i,txt="";
+            for(i=0;i<y.length;i++)
+            { if(y[i].nodeType==1)
+                txt=txt + y[i].nodeName + '<br/>';
+            }
+            document.getElementById("demo4").innerHTML = txt; 
+        }
+
+        
+    </script>
+</body>
+</html>
