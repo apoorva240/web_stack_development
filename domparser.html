@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <script>
+     function myfunc(y)
+     {
+        var xhttp=new XMLHttpRequest;
+        
+        xhttp.onreadystatechange=function()
+        {
+            if(this.status==200 && this.readyState== 4)
+            {
+                if(y==1)
+                removefunc(this);
+                if(y==2)
+                changeval(this);
+                if(y==3)
+                addelement(this);
+                if(y==4)
+                removefunc2(this);
+
+            }
+        }
+        xhttp.open("GET","payroll2.xml",true);
+        xhttp.send();
+     }
+       
+        function removefunc(xml)
+        {
+            var xmldoc=xml.responseXML;
+            var root= xmldoc.documentElement;
+            var currnode=root.childNodes[3];
+            removenode=currnode.removeChild(currnode.childNodes[3]);
+            document.getElementById("demo1").innerHTML = "Removed node  " + removenode.nodeName;
+
+        } 
+        function removefunc2(xml)
+        {
+            var xmldoc=xml.responseXML;
+            var currnode= xmldoc.getElementsByTagName("payroll")[0];
+            var y = currnode.childNodes;
+            var txt="";
+            for(i=0;i<y.length;i++)
+            {   if(y[i].nodeType==1)
+               {
+                removenode=currnode.removeChild(currnode.childNodes[i]);
+                txt+= "  " + removenode.nodeName;
+               } 
+            }
+           document.getElementById("demo6").innerHTML=txt;
+
+        }
+
+        function changeval(xml)
+        {   var xmldoc=xml.responseXML;
+             x= xmldoc.getElementsByTagName("email")[0].childNodes[0];
+            x.nodeValue = document.getElementById("email").value;
+            document.getElementById("demo3").innerHTML = "changed email id = "+x.nodeValue;
+        }
+
+        function addelement(xml)
+        { var xmldoc = xml.responseXML;
+            newEle = xmldoc.createElement("empaddress");
+            newText=xmldoc.createTextNode("Coimbatore");
+            newEle.appendChild(newText);
+            
+            x=xmldoc.getElementsByTagName("payroll")[0];
+            x.appendChild(newEle);
+            y=x.childNodes;
+            var txt="";
+            for(i=0;i<y.length;i++)
+            {
+                txt = y[i].nodeName;
+            }
+            document.getElementById("demo5").innerHTML ="newly added element = " + txt;
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Dom Parser</h1>
+    <table border="1" bgcolor="cyan">
+        <tr>
+            <td> <p id="demo1">Removed element = </p>
+                <button onclick="myfunc(1)">remove element</button> </td>
+        </tr>
+        <tr>
+            <td> <p id="demo3">Changed Email id = </p>
+                <input type="email" id="email" required>
+                <button onclick="myfunc(2)">change email id</button></td>
+        </tr>
+         <tr>
+            <td><p id="demo5">add element = </p>
+                <button onclick="myfunc(3)">add element</button></td>
+         </tr>  
+        <tr>
+            <td><p id="demo6"> Deleted block of code </p>
+                <button onclick="myfunc(4)">delete block of node</button></td>
+        </tr>         
+    </table>
+   
+</body>
