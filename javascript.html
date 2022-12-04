@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        fieldset
+        {
+            border:5px double blue;
+            width:50%;
+            
+        }
+        form
+        {
+            background-color:cadetblue;
+            color:black;
+            font-size: medium;
+            font-weight:bold;
+            font-family: 'Times New Roman';
+            width:80%;
+
+        }
+        body
+        {
+            background-color: aquamarine;
+        }
+        input
+        {
+            float:right;
+        }
+    </style>
+    <script>
+        function verify()
+        {
+            var name=document.getElementById("name").value;
+            var regex=/^([A-Za-z ]+)$/;
+            if(regex.test(name))
+            alert("valid Name");
+            else
+            alert("Invalid Name");
+        }
+        function verify2()
+        {
+            var phno=document.getElementById("num").value;
+            var regex=/^([0-9]{10})$/;
+            if(regex.test(phno))
+            alert("valid phone number");
+            else
+            alert("Invalid phone number");
+        } 
+        function verify3()
+        {
+            var pass=document.getElementById("password").value;
+            var regex=/(?=.*[0-9]+)(?=.*[A-Z]+)(?=.*[a-z]+)(?=.*[~`!@#$%^&*-+_></\?:;=,.")(}{[]|]+){6,8}/;
+            if(regex.test(pass))
+            alert("valid password");
+            else
+            alert("Invalid password");
+        }
+        function verify4()
+        {  var pass=document.getElementById("password").value;
+            var pass2=document.getElementById("password2").value;
+            if(pass != pass2)
+            alert("wrong password");
+            else
+            alert("password OK");
+
+        } 
+        function verify5()
+        {  var email=document.getElementById("email").value;
+            var regex=/^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+            if(regex.test(email))
+            alert("Invalid email id");
+            else
+            alert("Valid email id");
+
+        }
+        function verify6()
+        {   var dob= new Date(document.getElementById("dob").value);
+            var d = new Date();
+            var agedt = Date.now() - d.getTime();
+            var agedt2 = new Date(agedt);
+            age= agedt2.getUTCFullYear() - 1970;
+
+            if(age > 60)
+            alert("Age greater than 60!");
+            else if(age < 18)
+            alert("Age lesser than 18!");
+            else if (dob.getTime() > d.getTime() )
+                 alert("invalid");
+            else
+            alert("Valid");
+            //Date.now() returns the number of milliseconds since January 1, 1970.
+            // Notes. Date.now() is a static method of the Date object. 
+            //getTime() returns the number of milliseconds since January 1, 1970 00:00:00
+            //The getUTCFullYear() method returns the year in the specified date according to universal time. 
+
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend> Employee Registration Form </legend>
+        <form >
+            Employee name  <input type="text" id="name" onchange="verify()">
+            <br/><br/>
+            Employee contact details <input type="tel" id="num" onchange="verify2()">
+            <br/><br/>
+            Password : <input type="password" onchange="verify3()" id="password">
+            <br/><br/>
+            Confirm Password : <input type="password" onchange="verify4()" id="password2">
+            <br/><br/>
+            Email id : <input type="email" id="email" onchange="verify5()" size="30">
+            <br/><br/>
+            Date of birth: <input type="date" id="dob" onchange="verify6()">
+            <br/><br/>
+            <input type="submit" value="Register">
+            <input type="reset" value="Cancel">
+         </form>
+    </fieldset>
+    
+</body>
+</html>
