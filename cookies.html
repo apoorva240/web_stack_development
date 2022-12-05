@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        function myfunc()
+        { document.cookie = "username=John Doe";
+          document.cookie = "username2=Bidura Sarkar; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+          document.cookie = "username3=Merry; expires=Fri, 19 Dec 2025 12:00:00 UTC";
+          document.cookie = "username4=Joseph; expires=Sat, 20 Dec 2025 12:00:00 UTC";
+
+         }
+         function myfunc2()
+         { localStorage.setItem("UID","001");
+            localStorage.setItem("UID2","002");
+            localStorage.setItem("UID3","003");
+         }
+         function myfunc3()
+         {
+            sessionStorage.setItem("Session1","20");
+            sessionStorage.setItem("Session2","20");
+            sessionStorage.setItem("Session2","20");
+         }
+         function myfunc4(n)
+         {
+            document.cookie = n+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+         }
+         function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function readcookie()
+        {
+            let x= decodeURIComponent(document.cookie);
+            var text="";
+            for(i=0;i<x.length;i++)
+            {
+                if(x[i]!=';')
+                    text += x[i];
+                else
+                 text += '<br/>';
+            }
+           
+           
+            document.getElementById("allcookies").innerHTML=text;
+
+        } 
+
+        function setbgcolor()
+        {
+            let x= decodeURIComponent(document.cookie);
+            x+= ';';
+            var text="";
+            for(i=0;i<x.length;i++)
+            {
+                if(x[i]!=';')
+                    text += x[i];
+                else
+                {   
+                    if( text.indexOf('color')!=-1)
+                        {   alert(text.substring(7));
+                            document.body.style.backgroundColor=text.substring(7);                  
+                           break;
+                        }
+                        text="";
+                }
+            }
+        } 
+
+        function setbgimg(y)
+        {
+            let x= decodeURIComponent(document.cookie);
+            x+= ';';
+            var text="";
+            for(i=0;i<x.length;i++)
+            {
+                if(x[i]!=';')
+                    text += x[i];
+                else
+                {   
+                    if( text.indexOf('image')!=-1)
+                        {   alert(text.substring(7));
+                            
+                            document.body.style.backgroundImage = "url('" + text.substring(7) + "')";                
+                           
+                        }
+                        text="";
+                }
+            }
+        }
+    </script>
+</head>
+<body >
+<h3> Cookies</h3>
+<fieldset>
+<button onclick="myfunc()">click to add cookies </button>
+<br/>
+<button onclick="myfunc2()">click to add values to local storage</button>
+<br/>
+<button onclick="myfunc3()">click to add values to session storage </button>
+<br/>
+</fieldset>
+<br/><br/>
+<fieldset>
+cookie name :<input type="text" id="cname" required>
+<br/>
+cookie value :<input type="text" id="cvalue" required>
+<br/>
+to be expired after how many days : <input type="number" id="exdays" required>
+<br/>
+<button onclick="setCookie(document.getElementById('cname').value,document.getElementById('cvalue').value,document.getElementById('exdays').value)">
+Setcookie
+</button>
+<br/>
+<button onclick="myfunc4(document.getElementById('cname').value)">click to delete the above set cookie </button>
+<br/>
+<button onclick="readcookie()">readcookie</button>
+<p id="allcookies"></p>
+<br/><br/>
+</fieldset>
+
+<br/><br/>
+<fieldset>
+Enter a colour name <input type="text" id="color">
+<button onclick="setCookie('color',document.getElementById('color').value,100)" >set cookie for bgcolor</button>
+<br/>
+<button onclick="setbgcolor()" > Apply bgcolor</button>
+<br/><br/>
+Enter a image name and path <input type="text" id="img">
+<button onclick="setCookie('image',document.getElementById('img').value,100)" >set cookie for bg img</button>
+<br/>
+<button onclick="setbgimg(document.getElementById('img').value)" > Apply bg img</button>
+<br/><br/>
+</fieldset>
+</body>
+</html>
