@@ -14,7 +14,7 @@ angular.module("Payroll",[])
 {
    return function(input,option)
    { 
-     if(isNaN(option) || option=="")
+     if(isNaN(option) || option==""||option==null)
      return  input;
      else
      return "value changed to " + option;

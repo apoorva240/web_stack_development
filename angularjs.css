@@ -1,0 +1,11 @@
+table{
+    font-family: 'Georgia';
+    font-weight: bold;
+    font-style: oblique;
+    color:blueviolet;
+    border:5px solid rgb(85, 13, 152);
+} 
+input
+{
+    border:5px solid rgb(85, 13, 152);
+}

@@ -1,14 +1,14 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-    
+    <link rel="stylesheet" href="angularjs.css"/>
     <script src="json.js"></script>
 </head>
-<body ng-app="Payroll">
+<body bgcolor="skyblue" ng-app="Payroll">
     <div ng-controller="PayCtrl">
         Rows to Display in paygrade:<input type="number" step="1" min="0" max="6" ng-model="rowlimit"/><br><br>
         Rows to Display in employee:<input type="number" step="1" min="0" max="6" ng-model="rowlimit1"/><br><br>
-        Search Employee or paygrade:<input type="text" placeholder="Search Paygrade" ng-model="search"><br><br>
+        Search Employee or paygrade:<input type="text" placeholder="Search Keywords" ng-model="search"><br><br>
         Enter the Number of characters to be encoded in password field:<input type="text" value=0 ng-model="limit"/><br><br>
         change hra to:<input type="number" min="0" max=100 ng-model="limit2"/>
 
