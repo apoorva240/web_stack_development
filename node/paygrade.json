@@ -1,0 +1,6 @@
+{"paygrades":[
+    {"gid":1,"basic":20000,"dra":20,"hra":30},
+    {"gid":2,"basic":25000,"dra":20,"hra":35},
+    {"gid":3,"basic":40000,"dra":30,"hra":30},
+    {"gid":4,"basic":50000,"dra":27,"hra":30}
+]}
