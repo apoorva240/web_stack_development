@@ -3,9 +3,9 @@
         <p style="font-family:Arial, Helvetica, sans-serif;background-color:aquamarine;color:blueviolet;font-weight:bold" ng-repeat="emp in employees">
             {{emp.id}}
             <br/>
-            {{emp.name}}
+            {{emp.name|uppercase}}
             <br/>
-            {{emp.phno}}
+            {{emp.phno|limitTo:10}}
         </p>
     </body>
 </html>
